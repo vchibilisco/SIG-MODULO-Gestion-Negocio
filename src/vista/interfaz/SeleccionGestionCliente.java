@@ -60,8 +60,13 @@ public class SeleccionGestionCliente extends javax.swing.JInternalFrame {
             }
         });
 
+        btnElimCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnElimCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/remove people 64x64.png"))); // NOI18N
         btnElimCliente.setText("Eliminar Cliente");
         btnElimCliente.setToolTipText("Eliminar Cliente");
+        btnElimCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnElimCliente.setVerifyInputWhenFocusTarget(false);
+        btnElimCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnElimCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnElimClienteActionPerformed(evt);

@@ -16,7 +16,8 @@ public abstract class Conexion_DB {
 
     private Connection conexion;
     private Statement statement;
-    private String servidor = "192.168.1.102:3306";
+    //private String servidor = "192.168.1.102:3306";
+    private String servidor = "localhost";
     private String dataBase = "sig";
 
     public abstract void conectar(String user, String pass) throws SQLException, ClassNotFoundException;

@@ -35,13 +35,9 @@ public class DBProducto extends Entidad {
                 alta_prod_rutina.setString("rub", producto.getnRubro());
                 alta_prod_rutina.setString("uni", producto.getnUnidad());
                 alta_prod_rutina.setString("pCuit", producto.getProveedor().getCuit());
-                if (!alta_prod_rutina.execute()) {
-                    return true;
-                } else {
-                    return false;
-                }
+                alta_prod_rutina.execute();
             }
-            return false;
+            return true;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se pudo agregar producto:\n" + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();

@@ -72,15 +72,11 @@ public class DBMarca extends Entidad {
     }
 
     public static boolean modificarMarca(String nomActual, String nomFut) {
-        try {
-            boolean bandera = false;
-            CallableStatement mod_rub_rutina = (CallableStatement) CONTROLADOR_DB.getConexion().getConexion().prepareCall("CALL MODIFICAR_MARCA(?,?,?)");
+        try {            
+            CallableStatement mod_rub_rutina = (CallableStatement) CONTROLADOR_DB.getConexion().getConexion().prepareCall("CALL MODIFICAR_MARCA(?,?)");
             mod_rub_rutina.setString("nombA", nomActual);
-            mod_rub_rutina.setString("nombF", nomFut);
-            mod_rub_rutina.setBoolean("bandera", Boolean.valueOf(String.valueOf(Types.BOOLEAN)));
-            mod_rub_rutina.execute();
-            bandera = mod_rub_rutina.getBoolean("bandera");
-            if (bandera) {
+            mod_rub_rutina.setString("nombF", nomFut);                                   
+            if (!mod_rub_rutina.execute()) {
                 System.out.println("Actualizado");
                 return true;
             } else {

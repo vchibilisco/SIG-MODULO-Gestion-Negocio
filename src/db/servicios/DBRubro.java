@@ -81,14 +81,11 @@ public class DBRubro extends Entidad {
         try {
             boolean bandera = false;
             seleccionarTablaBD("rubro");
-            CallableStatement alta_rubro_rutina = (CallableStatement) CONTROLADOR_DB.getConexion().getConexion().prepareCall("CALL ALTA_RUBRO(?,?,?,?)");
+            CallableStatement alta_rubro_rutina = (CallableStatement) CONTROLADOR_DB.getConexion().getConexion().prepareCall("CALL ALTA_RUBRO(?,?,?)");
             alta_rubro_rutina.setInt("cod", rubro.getId_Rubro());
             alta_rubro_rutina.setString("nomb", rubro.getNombre());
             alta_rubro_rutina.setInt("elim", 1);
-            alta_rubro_rutina.setBoolean("bandera", Boolean.parseBoolean(String.valueOf(Types.BOOLEAN)));
-            alta_rubro_rutina.execute();
-            bandera = alta_rubro_rutina.getBoolean("bandera");
-            if (bandera) {
+            if (!alta_rubro_rutina.execute()) {
                 return true;
             } else {
                 return false;

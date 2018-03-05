@@ -4,11 +4,12 @@
  */
 package db.servicios;
 
-import com.mysql.jdbc.CallableStatement;
 import db.CONTROLADOR_DB;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.dominio.CLIENTE;
 import modelo.dominio.UBICACION;
@@ -31,7 +32,7 @@ public class DBCliente extends Entidad {
             }
             rs.close();
             return true;
-        } catch (Exception e) {            
+        } catch (Exception e) {
             return false;
         }
     }
@@ -45,7 +46,7 @@ public class DBCliente extends Entidad {
             altaCliente.setString("telefono", cliente.getTelefono());
             altaCliente.setString("rs", cliente.getRs());
             altaCliente.setInt("cp", cliente.getUbicacion().getCP());
-            if (!altaCliente.execute()) {                
+            if (!altaCliente.execute()) {
                 return true;
             } else {
                 return false;
@@ -100,6 +101,16 @@ public class DBCliente extends Entidad {
         } catch (SQLException ex) {
             ex.printStackTrace();
             return listaCliente;
+        }
+    }
+
+    public static void eliminarCliente(String cuit) {
+        try {
+            CONTROLADOR_DB.getConexion().getStatement().executeUpdate("UPDATE cliente set eliminar = 0 where CUIT = " + quotate(cuit));
+            System.out.println("Se elimino el Cliente correctamente");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al aeliminar Cliente con CUIT: " + cuit);
         }
     }
 }

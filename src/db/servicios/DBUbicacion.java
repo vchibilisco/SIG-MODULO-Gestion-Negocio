@@ -4,8 +4,9 @@
  */
 package db.servicios;
 
-import com.mysql.jdbc.CallableStatement;
+
 import db.CONTROLADOR_DB;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JComboBox;

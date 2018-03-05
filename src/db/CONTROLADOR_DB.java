@@ -235,4 +235,8 @@ public class CONTROLADOR_DB {
     public static boolean modificarCliente(CLIENTE cliente) {
         return DBCliente.modificarCliente(cliente);
     }
+    
+    public static void eliminarCliente(String cuit){
+        DBCliente.eliminarCliente(cuit);
+    }
 }
