@@ -195,7 +195,7 @@ public class AltaRubro extends javax.swing.JDialog {
             if (this.txtNom.getText().length() <= 120) {
                 String nombre = this.txtNom.getText().toUpperCase();
                 txtNom.setText(nombre);
-                Pattern pattern = Pattern.compile("[A-Z]*");
+                Pattern pattern = Pattern.compile("[A-Z\\s]*");
                 Matcher matcher = pattern.matcher(nombre);
                 if (matcher.matches()) {
                     bandera = CONTROLADOR_V.getContro_m().altaRubro(Integer.parseInt(txtCod.getText()), txtNom.getText());

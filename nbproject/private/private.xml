@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/D:/MIS%20DOCUMENTOS/subver/SUBVERSION/Modulo-Gestion-Negocio/src/vista/interfaz/ABM/BuscaGest.java</file>
-        <file>file:/D:/MIS%20DOCUMENTOS/subver/SUBVERSION/Modulo-Gestion-Negocio/src/vista/CONTROLADOR_V.java</file>
-        <file>file:/D:/MIS%20DOCUMENTOS/subver/SUBVERSION/Modulo-Gestion-Negocio/src/vista/interfaz/SeleccionGestionCliente.java</file>
-        <file>file:/D:/MIS%20DOCUMENTOS/subver/SUBVERSION/Modulo-Gestion-Negocio/src/vista/interfaz/SeleccionGestionProveedor.java</file>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Mis%20Documentos/SIG/PERSONAL/SIG-MODULO-Gestion-Negocio/src/db/servicios/DBProducto.java</file>
+            <file>file:/D:/Mis%20Documentos/SIG/PERSONAL/SIG-MODULO-Gestion-Negocio/src/db/servicios/DBLinea_Compra.java</file>
+            <file>file:/D:/Mis%20Documentos/SIG/PERSONAL/SIG-MODULO-Gestion-Negocio/src/vista/CONTROLADOR_V.java</file>
+            <file>file:/D:/Mis%20Documentos/SIG/PERSONAL/SIG-MODULO-Gestion-Negocio/src/modelo/CONTROLADOR_M.java</file>
+            <file>file:/D:/Mis%20Documentos/SIG/PERSONAL/SIG-MODULO-Gestion-Negocio/src/vista/interfaz/ABM/AltaProducto.java</file>
+            <file>file:/D:/Mis%20Documentos/SIG/PERSONAL/SIG-MODULO-Gestion-Negocio/src/db/CONTROLADOR_DB.java</file>
+            <file>file:/D:/Mis%20Documentos/SIG/PERSONAL/SIG-MODULO-Gestion-Negocio/src/vista/interfaz/ABM/AltaStock.java</file>
+        </group>
     </open-files>
 </project-private>

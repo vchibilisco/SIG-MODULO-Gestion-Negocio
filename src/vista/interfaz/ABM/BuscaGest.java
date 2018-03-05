@@ -25,30 +25,35 @@ public class BuscaGest extends javax.swing.JDialog {
         this.tipoGestion = tGestion;
         switch (tipoGestion) {
             case "modificarProducto":
+                this.etqBuscar.setText("Buscar Producto:");
                 this.btnModElim.setToolTipText("Modificar");
                 this.btnModElim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/Update.png")));
                 cargarTabla();
                 break;
             case "eliminarProducto":
+                this.etqBuscar.setText("Buscar Producto:");
                 this.btnModElim.setToolTipText("Eliminar");
                 this.btnModElim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/Minus.png")));
                 cargarTabla();
                 break;
             case "proveedorModificar":
+                this.etqBuscar.setText("Buscar Proovedor:");
                 this.btnModElim.setToolTipText("Modificar");
                 this.btnModElim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/Update.png")));
                 this.etqBuscar.setText("Buscar Proveedor");
                 cargarTabla();
                 break;
             case "clienteModificar":
+                this.etqBuscar.setText("Buscar Cliente:");
                 this.btnModElim.setToolTipText("Modificar");
                 this.btnModElim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/Update.png")));
                 this.etqBuscar.setText("Buscar Cliente");
                 cargarTabla();
                 break;
             case "clienteEliminar":
+                this.etqBuscar.setText("Buscar Cliente:");
                 this.btnModElim.setToolTipText("Eliminar");
-                //this.btnModElim.setIcon(new javax.swing.ImageIcon());
+                this.btnModElim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/Minus.png")));
                 cargarTabla();
                 break;
         }
@@ -118,8 +123,6 @@ public class BuscaGest extends javax.swing.JDialog {
                 btnCerrarActionPerformed(evt);
             }
         });
-
-        etqBuscar.setText("Buscar Producto:");
 
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -211,6 +214,9 @@ public class BuscaGest extends javax.swing.JDialog {
                                 break;
                             case "clienteModificar":
                                 CONTROLADOR_V.iniciaModificarCliente(id);
+                                break;
+                            case "clienteEliminar" :
+                                CONTROLADOR_V.iniciaEliminarCliente(id);
                                 break;
                         }
                     } catch (Exception e) {

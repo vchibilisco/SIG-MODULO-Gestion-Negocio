@@ -31,11 +31,8 @@ public class DBLinea_Compra extends Entidad {
                 linea_comp_rutina.setInt("stockActual", linea.getStock_Actual());
                 linea_comp_rutina.setInt("stockIngreso", linea.getStock_Ingreso());
                 linea_comp_rutina.setFloat("costProd", linea.getCosto_Prod());
-                if (!linea_comp_rutina.execute()) {
-                    DBProducto.actualizarStock(linea.getCUP(), linea.getStock_Ingreso());
-                } else {
-                    return false;
-                }
+                linea_comp_rutina.execute();
+                DBProducto.actualizarStock(linea.getCUP(), linea.getStock_Ingreso());
             }
             return true;
         } catch (Exception e) {

@@ -60,6 +60,10 @@ public class CONTROLADOR_M {
         return CONTROLADOR_DB.recuperarListaProductoDB();
     }
 
+    public static void setListaProductoNuevo(ArrayList<PRODUCTO> nuevaLista) {
+        listaProductoNuevo = nuevaLista;
+    }
+    
     public static ArrayList<PRODUCTO> getListaProductoNuevo() {
         return listaProductoNuevo;
     }
@@ -196,6 +200,8 @@ public class CONTROLADOR_M {
         CONTROLADOR_M.getCompra().setFecha(fechaSql);
         CONTROLADOR_M.getCompra().setNumero_Factura(numero_Factura);
         if (CONTROLADOR_DB.confirmarFacCompra(CONTROLADOR_M.getCompra(), CONTROLADOR_M.getListaProductoNuevo())) {
+            CONTROLADOR_M.iniciaAltaStock();
+            CONTROLADOR_M.setListaProductoNuevo(new ArrayList<PRODUCTO>());
             return true;
         } else {
             return false;
@@ -239,6 +245,8 @@ public class CONTROLADOR_M {
     public static boolean eliminarMarca(Integer codMarca) {
         return CONTROLADOR_DB.eliminarMarca(codMarca);
     }
+    
+    
     //===========FInaliza metodos de ABM===========
 
     //=========Recupera codigo seleccionado ==========
@@ -321,6 +329,10 @@ public class CONTROLADOR_M {
             }
         }
         return false;
+    }
+    
+    public static void eliminarCliente(String cuit){
+        CONTROLADOR_DB.eliminarCliente(cuit);
     }
     //========Mod ubicacion==============
 

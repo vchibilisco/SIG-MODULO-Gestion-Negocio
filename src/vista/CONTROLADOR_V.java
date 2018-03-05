@@ -362,6 +362,12 @@ public class CONTROLADOR_V {
         }
     }
 
+    public static void iniciaEliminarCliente(String cuit){
+        CONTROLADOR_M.eliminarCliente(cuit);
+        buscarGestion.setEnabled(false);
+        iniciaBuscarGestion("clienteEliminar");
+    }
+    
     public static void iniciaModificarMarca() {
         CONTROLADOR_V.modMarca = new ModificarMarca(CONTROLADOR_V.getPrincipal(), true);
         CONTROLADOR_V.modMarca.setVisible(true);
@@ -429,13 +435,7 @@ public class CONTROLADOR_V {
                 }
             }
             if (!listaProdExist.isEmpty()) {
-                Integer size = listaProdExist.size() - 1;
-                for (PRODUCTO eProducto : listaProdExist) {
-                    if (size == listaProdExist.size() - 1) {
-                        return eProducto.getCUP() + 10;
-                    }
-                }
-                return 0;
+                return listaProdExist.get(listaProdExist.size() - 1).getCUP() + 10;
             } else {
                 return CONTROLADOR_M.recupCodigoProducto(nombreRubro);
             }
