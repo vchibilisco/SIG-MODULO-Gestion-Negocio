@@ -1,6 +1,8 @@
 package vista.interfaz.ABM;
 
 import java.awt.HeadlessException;
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -235,7 +237,7 @@ public class BuscaGest extends javax.swing.JDialog {
     }//GEN-LAST:event_btnModElimActionPerformed
 
     private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
-        filtro(0);
+        filtro(0, 1);
     }//GEN-LAST:event_txtBuscarKeyPressed
     //Grupo de botones que filtra la tabla
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -278,7 +280,10 @@ public class BuscaGest extends javax.swing.JDialog {
     }
 
     //Metodo que filtra
-    private void filtro(int colum) {
-        filtroDatos.setRowFilter(RowFilter.regexFilter(txtBuscar.getText().toUpperCase(), colum));
+    private void filtro(int id, int description) {
+        List<RowFilter<Object,Object>> filters = new ArrayList<>(2);
+        filters.add(RowFilter.regexFilter(txtBuscar.getText().toUpperCase(), id));
+        filters.add(RowFilter.regexFilter(txtBuscar.getText().toUpperCase(), description));
+        filtroDatos.setRowFilter(RowFilter.andFilter(filters));
     }
 }
